@@ -1,0 +1,95 @@
+body {
+    background: #222;
+    margin: 0;
+    font-family: Arial;
+    overflow: hidden;
+}
+
+audio {
+    position: absolute;
+    visibility: hidden;
+}
+
+button {
+    border: 0;
+    background: transparent;
+    color: #dedede;
+    font-size: 20px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.button-wrapper {
+    background: #222;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: visible;
+    opacity: 1;
+    transition: 1s;
+}
+
+.button-wrapper.hidden,
+.kappa-wrapper.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.kappa-wrapper {
+    visibility: visible;
+    opacity: 1;
+    background: #222;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.kappa-wrapper img {
+    transition: 150s linear;
+    padding: 17px 5px;
+}
+
+.kappa-wrapper.spinning img {
+    transform: rotate(27000deg);
+}
+
+.kappa-wrapper.flashing img {
+    filter: hue-rotate(54000deg);
+}
+
+.kappa-wrapper.sizing {
+    animation-name: scaleInterval;
+    animation-duration: 0.96s;
+    animation-iteration-count: infinite;
+}
+
+.kappa-wrapper.blur {
+    animation-name: blur;
+    animation-duration: 18s;
+}
+
+
+
+
+
+@keyframes scaleInterval {
+    0% {transform: scale(1);}
+    50% {transform: scale(2);}
+    100% {transform: scale(1);}
+}
+
+@keyframes blur {
+    from {filter: blur(0);}
+    to {filter: blur(5px);}
+}
